@@ -20,7 +20,7 @@ brew install $(cat libs.brew-cli | tr '\n' ' ')
 brew install --cask $(cat libs.brew-cask | tr '\n' ' ')
 
 # ADD VSCODE CONFIG (required after brew casks)
-cp vscode.settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+cp configs.vscode.json "$HOME/Library/Application Support/Code/User/settings.json"
 
 # CONFIGURE ZSH & SHELL
 if [[ "$(uname -m)" == "arm64" ]]; then
