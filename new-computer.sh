@@ -11,7 +11,7 @@ cp .zshrc ~/.zshrc
 
 # INSTALL BREW
 if ! type -a brew > /dev/null; then
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # INSTALL BREW LIBS
@@ -24,33 +24,33 @@ cp vscode.settings.json "$HOME/Library/Application Support/Code/User/settings.js
 
 # CONFIGURE ZSH & SHELL
 if [[ "$(uname -m)" == "arm64" ]]; then
-	if ! grep -q '/opt/homebrew/bin/zsh' /etc/shells; then
-		echo '/opt/homebrew/bin/zsh' | sudo tee -a /etc/shells
-	fi
+  if ! grep -q '/opt/homebrew/bin/zsh' /etc/shells; then
+    echo '/opt/homebrew/bin/zsh' | sudo tee -a /etc/shells
+  fi
 
-	if [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
-		chsh -s /opt/homebrew/bin/zsh
-	fi
+  if [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
+    chsh -s /opt/homebrew/bin/zsh
+  fi
 elif [[ "$(uname -m)" == "x86_64" ]]; then
-	if ! grep -q '/usr/local/bin/zsh' /etc/shells; then
-		echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells
-	fi
+  if ! grep -q '/usr/local/bin/zsh' /etc/shells; then
+    echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells
+  fi
 
-	if [[ "$SHELL" != "/usr/local/bin/zsh" ]]; then
-		chsh -s /usr/local/bin/zsh
-	fi
+  if [[ "$SHELL" != "/usr/local/bin/zsh" ]]; then
+    chsh -s /usr/local/bin/zsh
+  fi
 else
-	echo "ERROR: uname -m didn't output a proper value"
-	exit 1
+  echo "ERROR: uname -m didn't output a proper value"
+  exit 1
 fi
 
 if ! [[ -d ~/.oh-my-zsh ]]; then
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
 # INSTALL ASDF LIBS
 while read -r plugin; do
-	asdf plugin add "${plugin}" ||:
+  asdf plugin add "${plugin}" ||:
 done < <(cut -d' ' -f1 < ~/.tool-versions)
 
 asdf install
@@ -58,23 +58,23 @@ asdf install
 # INSTALL VS CODE LIBS
 # Exported via: code --list-extensions | tr '\n' ' ' | pbcopy
 while read -r plugin; do
-	code --install-extension "${plugin}"
+  code --install-extension "${plugin}"
 done < libs.vscode
 
 # CONFIGURE FINDER
 if [[ "$(defaults read com.apple.Finder AppleShowAllFiles)" != "true" ]]; then
-	defaults write com.apple.Finder AppleShowAllFiles true
-	killall Finder
+  defaults write com.apple.Finder AppleShowAllFiles true
+  killall Finder
 fi
 
 # SSH STUFF
 if [[ ! -f ~/.ssh/id_rsa_gmail ]]; then
-	ssh-keygen -t rsa -b 4096 -C "rms1000watt@gmail.com" -f ~/.ssh/id_rsa_gmail
+  ssh-keygen -t rsa -b 4096 -C "rms1000watt@gmail.com" -f ~/.ssh/id_rsa_gmail
 fi
 
 # GPG STUFF
 if [[ ! -f ~/.gnupg/pubring.kbx ]]; then
-	gpg --generate-key
+  gpg --generate-key
 fi
 
 echo "
@@ -118,8 +118,8 @@ echo "
 - Select User
 - Login Items tab
 - Add:
-	- Amphetamine
-	- Bartender
-	- Divvy
-	- Menumeters
+  - Amphetamine
+  - Bartender
+  - Divvy
+  - Menumeters
 "
