@@ -1,0 +1,14 @@
+awscli 2.4.3
+direnv 2.28.0
+golang 1.18.2
+helm 3.7.1
+helmfile 0.142.0
+hey 0.1.4
+jq 1.6
+kubectl 1.23.6
+nodejs 16.15.0
+rust 1.61.0
+sops 3.7.3
+stern 1.18.0
+terraform 1.0.9
+terragrunt 0.31.1
