@@ -18,3 +18,4 @@ export GOPATH=$HOME/go
 export CGO_ENABLED=0
 export PATH=$PATH:$GOPATH/bin
 export GITHUB=$GOPATH/src/github.com
+export EDITOR="subl -wn"
