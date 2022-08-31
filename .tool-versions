@@ -8,6 +8,7 @@ jq 1.6
 kubectl 1.23.6
 nodejs 16.15.0
 rust 1.61.0
+shellcheck 0.8.0
 sops 3.7.3
 stern 1.18.0
 terraform 1.0.9

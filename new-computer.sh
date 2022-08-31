@@ -1,7 +1,13 @@
 #! /usr/bin/env zsh
 
+set -e
+
 # MOVE DOTFILES
-# TODO
+cp .gitconfig ~/.gitconfig
+mkdir ~/.ssh > /dev/null 2>&1 ||:
+cp .ssh-config ~/.ssh/config
+cp .tool-versions ~/.tool-versions
+cp .zshrc ~/.zshrc
 
 # INSTALL BREW
 if ! type -a brew > /dev/null; then
@@ -13,6 +19,9 @@ brew tap homebrew/cask-versions
 brew install $(cat libs.brew-cli | tr '\n' ' ')
 brew install --cask $(cat libs.brew-cask | tr '\n' ' ')
 
+# ADD VSCODE CONFIG (required after brew casks)
+cp vscode.settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+
 # CONFIGURE ZSH & SHELL
 if [[ "$(uname -m)" == "arm64" ]]; then
 	if ! grep -q '/opt/homebrew/bin/zsh' /etc/shells; then
@@ -22,7 +31,7 @@ if [[ "$(uname -m)" == "arm64" ]]; then
 	if [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
 		chsh -s /opt/homebrew/bin/zsh
 	fi
-else
+elif [[ "$(uname -m)" == "x86_64" ]]; then
 	if ! grep -q '/usr/local/bin/zsh' /etc/shells; then
 		echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells
 	fi
@@ -30,6 +39,9 @@ else
 	if [[ "$SHELL" != "/usr/local/bin/zsh" ]]; then
 		chsh -s /usr/local/bin/zsh
 	fi
+else
+	echo "ERROR: uname -m didn't output a proper value"
+	exit 1
 fi
 
 if ! [[ -d ~/.oh-my-zsh ]]; then
@@ -38,7 +50,7 @@ fi
 
 # INSTALL ASDF LIBS
 while read -r plugin; do
-	asdf plugin add "${plugin}"
+	asdf plugin add "${plugin}" ||:
 done < <(cut -d' ' -f1 < ~/.tool-versions)
 
 asdf install
@@ -66,7 +78,7 @@ if [[ ! -f ~/.gnupg/pubring.kbx ]]; then
 fi
 
 echo "
-## Manual Stuff
+## Manual System Preferences
 - Keyboard: Key Repeat=fastest, Delay Until Repeat=shortest
 - Keyboard: Disable use smart quotes and dashes
 - Displays: Adjust resolution by 1
@@ -76,12 +88,16 @@ echo "
 - Dock: Depress show recent applications in dock
 - Finder: Preferences > Advanced > show all file extensions
 
+## Github
+- Upload the new ssh public key into github
+
 ## I got too lazy...
 - Install... https://github.com/yujitach/MenuMeters --> https://github.com/yujitach/MenuMeters/releases
 
 ## Divvy Settings:
 - System Preferences > Security & Privacy > Privacy > Accessibility > Allow divvy
 - Select Use global shortcut to display panel and set it to: control + option + space
+- 10x10 grid
 
 ## Menu Meters Settings
 - Network: Throughput + Depress show throughput values
@@ -92,6 +108,7 @@ echo "
 - Ghostery
 - lastpass
 - authenticator
+- aws-extend-switch-roles
 
 ## App Store
 - amphetamine
