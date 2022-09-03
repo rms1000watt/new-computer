@@ -6,6 +6,8 @@ git
 gnu-sed
 gnupg
 hugo
+ncdu
+protobuf
 remind101/formulae/assume-role
 rg
 tree
