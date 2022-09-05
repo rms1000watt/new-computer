@@ -56,7 +56,7 @@ done < <(cut -d' ' -f1 < ~/.tool-versions)
 asdf install
 
 # INSTALL VS CODE LIBS
-# Exported via: code --list-extensions | tr '\n' ' ' | pbcopy
+# Exported via: code --list-extensions
 while read -r plugin; do
   code --install-extension "${plugin}"
 done < libs.vscode
