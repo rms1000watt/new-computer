@@ -8,9 +8,11 @@ gnupg
 hugo
 ncdu
 protobuf
+qemu
 remind101/formulae/assume-role
 rg
 tree
+vagrant
 wget
 yq
 zsh
