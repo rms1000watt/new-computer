@@ -4,7 +4,7 @@ set -e
 
 # MOVE DOTFILES
 cp .gitconfig ~/.gitconfig
-mkdir ~/.ssh > /dev/null 2>&1 ||:
+mkdir ~/.ssh &> /dev/null ||:
 cp .ssh-config ~/.ssh/config
 cp .tool-versions ~/.tool-versions
 cp .zshrc ~/.zshrc
@@ -87,6 +87,7 @@ echo "
 - Terminal stuff: terminal.md
 - Dock: Depress show recent applications in dock
 - Finder: Preferences > Advanced > show all file extensions
+- Finder: Show > Show Path Bar
 
 ## Github
 - Upload the new ssh public key into github
