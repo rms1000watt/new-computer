@@ -11,6 +11,7 @@ protobuf
 qemu
 remind101/formulae/assume-role
 rg
+telnet
 tree
 vagrant
 wget
