@@ -14,6 +14,8 @@ if ! type -a brew > /dev/null; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # INSTALL BREW LIBS
 brew tap homebrew/cask-versions
 brew install $(cat libs.brew-cli | tr '\n' ' ')
