@@ -17,6 +17,8 @@ Download this repo, then run:
 ./new-computer.sh
 ```
 
+You can configure which libs/tools you want to install by editing the config and lib files below
+
 ## Details
 
 This repo contains:
