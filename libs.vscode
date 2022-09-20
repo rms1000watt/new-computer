@@ -10,7 +10,9 @@ ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
+Orta.vscode-jest
 rust-lang.rust-analyzer
+SonarSource.sonarlint-vscode
 timonwong.shellcheck
 Tyriar.sort-lines
 wk-j.save-and-run
