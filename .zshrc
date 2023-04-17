@@ -1,4 +1,4 @@
-. /opt/homebrew/opt/asdf/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
