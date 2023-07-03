@@ -11,7 +11,7 @@ cp .zshrc ~/.zshrc
 
 # INSTALL BREW
 if ! type -a brew > /dev/null; then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
