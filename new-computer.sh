@@ -22,6 +22,10 @@ brew install $(cat libs.brew-cli | tr '\n' ' ')
 brew install --cask $(cat libs.brew-cask | tr '\n' ' ')
 
 # ADD VSCODE CONFIG (required after brew casks)
+if [[ ! -d "$HOME/Library/Application Support/Code/User" ]]; then 
+  mkdir "$HOME/Library/Application Support/Code/User"
+fi
+
 cp configs.vscode.json "$HOME/Library/Application Support/Code/User/settings.json"
 
 # CONFIGURE ZSH & SHELL
