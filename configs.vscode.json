@@ -91,17 +91,5 @@
   "sonarlint.rules": {},
   "window.zoomLevel": 1,
   "http.proxySupport": "on",
-  "remote.SSH.connectTimeout": 10000,
-  "remote.SSH.remotePlatform": {
-    "coder-vscode.coder.prod.netflix.net--ryanms--ryanms-delete-me.main": "linux"
-  },
-  "coder.autologin": true,
-  "coder.defaultUrl": "https://coder.prod.netflix.net",
-  "coder.disableSignatureVerification": true,
-  "coder.tlsAltHost": "coder.us-west-2.prod.stub.metatron.netflix.net",
-  "coder.tlsCaFile": "${userHome}/.metatron/metatronClient.trust.pem",
-  "coder.tlsCertFile": "${userHome}/.metatron/certificates/client.crt",
-  "coder.tlsCertRefreshCommand": "metatron refresh",
-  "coder.tlsKeyFile": "${userHome}/.metatron/certificates/client.key",
   "update.showReleaseNotes": false
 }
