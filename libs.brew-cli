@@ -11,6 +11,7 @@ helm
 helmfile
 jq
 ncdu
+nvm
 opentofu
 oven-sh/bun/bun
 remind101/formulae/assume-role
