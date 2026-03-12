@@ -21,6 +21,10 @@ brew tap homebrew/cask-versions
 brew install $(cat libs.brew-cli | tr '\n' ' ')
 brew install --cask $(cat libs.brew-cask | tr '\n' ' ')
 
+# INSTALL NODE via nvm
+nvm install --lts
+nvm use node
+
 # INSTALL NODE LIBS
 npm i -g $(cat libs.npm | tr '\n' ' ')
 
