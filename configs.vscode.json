@@ -2,19 +2,28 @@
   "[typescript]": {
     "editor.formatOnSave": true
   },
+  "jest.autoRun": {},
   "editor.cursorBlinking": "solid",
-  "editor.rulers": [
-    80,
-    100,
-    120
-  ],
+  "editor.rulers": [80, 100, 120],
   "editor.tabSize": 4,
+  "editor.renderWhitespace": "none",
+  "editor.renderControlCharacters": false,
+  "editor.codeLens": false,
+  "files.associations": {
+    "*.tfvars": "terraform",
+    "*.hcl": "terraform"
+  },
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
     "**/node_modules/*/**": true,
-    "**/.terragrunt-cache/**": true
+    "**/.terragrunt-cache/**": true,
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
   },
+  "files.trimTrailingWhitespace": true,
+  "files.eol": "\n",
   "saveAndRun": {
     "commands": [
       {
@@ -40,9 +49,12 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
-  "files.trimTrailingWhitespace": true,
   "go.formatTool": "goimports",
+  "go.toolsEnvVars": {
+    "GO111MODULE": "on"
+  },
   "python.formatting.provider": "autopep8",
+  "python.createEnvironment.trigger": "off",
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.rendererType": "dom",
   "terminal.integrated.profiles.osx": {
@@ -52,6 +64,8 @@
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.scrollback": 2000,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "overviewRuler",
   "terraform.codelens.enabled": false,
   "terraform.indexing": {
     "enabled": false
@@ -59,22 +73,14 @@
   "terraform.telemetry.enabled": false,
   "workbench.colorTheme": "Quiet Light",
   "workbench.iconTheme": null,
-  "editor.renderWhitespace": "none",
-  "editor.renderControlCharacters": false,
-  "breadcrumbs.enabled": false,
-  "go.toolsEnvVars": {
-    "GO111MODULE": "on"
-  },
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "files.associations": {
-    "*.tfvars": "terraform",
-    "*.hcl": "terraform"
-  },
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
   "workbench.editor.showTabs": "single",
-  "editor.codeLens": false,
+  "workbench.settings.applyToAllProfiles": ["editor.defaultFormatter"],
+  "breadcrumbs.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "eslint.format.enable": true,
   "security.workspace.trust.untrustedFiles": "open",
   "diffEditor.ignoreTrimWhitespace": false,
   "rust-analyzer.server.path": "~/.vscode/extensions/rust-lang.rust-analyzer-0.3.1075-darwin-x64/server/rust-analyzer",
@@ -82,5 +88,8 @@
   "rust-analyzer.inlayHints.parameterHints.enable": false,
   "rust-analyzer.inlayHints.closingBraceHints.enable": false,
   "rust-analyzer.inlayHints.chainingHints.enable": false,
-  "terminal.integrated.enableMultiLinePasteWarning": false
+  "sonarlint.rules": {},
+  "window.zoomLevel": 1,
+  "http.proxySupport": "on",
+  "update.showReleaseNotes": false
 }
