@@ -10,6 +10,7 @@ go
 helm
 helmfile
 jq
+kubectl
 ncdu
 nvm
 opentofu
