@@ -16,6 +16,8 @@ nvm
 opentofu
 oven-sh/bun/bun
 remind101/formulae/assume-role
+rust
+shellcheck
 sops
 stern
 telnet
@@ -24,4 +26,5 @@ tree
 vagrant
 wget
 yq
+zig
 zsh
