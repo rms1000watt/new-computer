@@ -8,7 +8,7 @@
     100,
     120
   ],
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
@@ -73,7 +73,7 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "single",
   "editor.codeLens": false,
   "security.workspace.trust.untrustedFiles": "open",
   "diffEditor.ignoreTrimWhitespace": false,
