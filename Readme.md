@@ -23,9 +23,9 @@ You can configure which libs/tools you want to install by editing the config and
 
 This repo contains:
 - 1 shell script `new-computer.sh`
-- >= 1 dotfiles (files start with a `.`)
-- >= 1 configs (files start with `configs.`)
-- >= 1 lib files (files start with `libs.`)
+- &gt;= 1 dotfiles (files start with a `.`)
+- &gt;= 1 configs (files start with `configs.`)
+- &gt;= 1 lib files (files start with `libs.`)
 - 1 Readme
 
 dotfiles and configs get dropped into their appropriate directories.
