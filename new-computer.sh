@@ -21,6 +21,9 @@ brew tap homebrew/cask-versions
 brew install $(cat libs.brew-cli | tr '\n' ' ')
 brew install --cask $(cat libs.brew-cask | tr '\n' ' ')
 
+# INSTALL NODE LIBS
+npm i -g $(cat libs.npm | tr '\n' ' ')
+
 # ADD VSCODE CONFIG (required after brew casks)
 if [[ ! -d "$HOME/Library/Application Support/Code/User" ]]; then 
   mkdir -p "$HOME/Library/Application Support/Code/User"
@@ -53,13 +56,6 @@ fi
 if ! [[ -d ~/.oh-my-zsh ]]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
-
-# INSTALL ASDF LIBS
-while read -r plugin; do
-  asdf plugin add "${plugin}" ||:
-done < <(cut -d' ' -f1 < ~/.tool-versions)
-
-asdf install
 
 # INSTALL VS CODE LIBS
 # Exported via: code --list-extensions
