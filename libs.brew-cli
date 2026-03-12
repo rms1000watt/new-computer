@@ -1,13 +1,14 @@
-asdf
 bash
 coreutils
 git
 gnu-sed
 gnupg
 ncdu
+opentofu
 oven-sh/bun/bun
 remind101/formulae/assume-role
 telnet
+terragrunt
 tree
 vagrant
 wget
