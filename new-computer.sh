@@ -86,7 +86,8 @@ fi
 echo "
 ## Manual System Preferences
 - Keyboard: Key Repeat=fastest, Delay Until Repeat=shortest
-- Keyboard: Disable use smart quotes and dashes
+- Keyboard: Disable 'use smart quotes and dashes'
+- Keyboard: Disable 'Add period with double spaces'
 - Displays: Adjust resolution by 1
 - Mission Control: Disable automatically rearrange spaces based on most recent use
 - Docker: Preference update RAM to 8GB & Disable experimental features
